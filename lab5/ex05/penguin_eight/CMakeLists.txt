@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(penguin_robot)
+project(penguin_eight)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -11,17 +11,14 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 install(
-  DIRECTORY src launch rviz
+  DIRECTORY src launch
   DESTINATION share/${PROJECT_NAME}
 )
 
 # Install python nodes as executables into lib/<package>
 install(
   PROGRAMS
-    src/circle_movement.py
-    src/random_fish_movement.py
-    src/fish_tf_broadcaster.py
-    src/penguin_tf_listener.py
+    src/figure_eight.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
